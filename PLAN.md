@@ -79,7 +79,7 @@ cp-mcp/
 ├── pyproject.toml
 ├── Dockerfile
 ├── docker-compose.yml
-├── .env.example
+├── .env
 ├── README.md
 ├── PLAN.md
 ├── venv/                         # local only, gitignored

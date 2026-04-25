@@ -62,7 +62,7 @@ The Docker image already includes pango/cairo for PDF rendering. A named volume 
 
 ## Configuration
 
-Environment variables (see `.env.example`):
+Environment variables (see `.env` — all defaults, no secrets):
 
 | Variable | Default | Purpose |
 |----------|---------|---------|
