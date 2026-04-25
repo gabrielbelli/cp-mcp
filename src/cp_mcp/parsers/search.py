@@ -109,8 +109,6 @@ def _parse_suggestions(tree: HTMLParser) -> list[Suggestion]:
     if not box:
         return []
     out: list[Suggestion] = []
-    raw = box.html or ""
-    counts: dict[str, int] = {}
     # Counts appear in plaintext like "(257), " between <li>s. Map by listing them in order.
     text_blob = clean_text(box.text(separator=" "))
     matched_counts = [int(c.replace(".", "")) for c in _SUGG_COUNT_RE.findall(text_blob)]

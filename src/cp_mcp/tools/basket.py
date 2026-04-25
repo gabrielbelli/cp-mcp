@@ -11,13 +11,12 @@ from pathlib import Path
 
 from ..basket import (
     BasketItemInput,
-    BasketResult,
     BasketSolution,
     solve_pareto,
     solve_within_stores,
 )
 from ..format import format_basket as _format_basket
-from ..models import Offer, StoreAddress
+from ..models import StoreAddress
 from ..parsers import parse_store_html, slugify
 from ..store_index import big_store_names, fetch_directory
 from ..intent import Intent, parse_intent, query_strategies, rank_candidates

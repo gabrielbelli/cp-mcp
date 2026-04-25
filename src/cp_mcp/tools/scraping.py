@@ -13,7 +13,6 @@ from ..compare import watch as watch_product
 from ..intent import (
     Intent,
     ResolveResult,
-    ResolvedCandidate,
     parse_intent,
     query_strategies,
     rank_candidates,
