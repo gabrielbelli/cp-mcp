@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cp-mcp"
+version = "0.0.1"
+description = "MCP server for searching and comparing prices on comprasparaguai.com.br"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "BSD-2-Clause" }
+authors = [{ name = "Gabriel Belli" }]
+dependencies = [
+    "mcp>=1.2.0",
+    "httpx>=0.27",
+    "selectolax>=0.3.21",
+    "pydantic>=2.7",
+    "aiosqlite>=0.20",
+    "structlog>=24.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "respx>=0.21",
+    "ruff>=0.5",
+]
+pdf = [
+    # PDF rendering. Requires system libs (pango / cairo).
+    # macOS: `brew install pango`.
+    # Debian/Ubuntu (incl. python:3.12-slim Docker): apt install libpango-1.0-0 libpangoft2-1.0-0.
+    "weasyprint>=62",
+]
+
+[project.scripts]
+cp-mcp = "cp_mcp.server:main"
+cp-mcp-render = "cp_mcp.render:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"

@@ -1,0 +1,17 @@
+services:
+  cp-mcp:
+    build: .
+    image: cp-mcp:latest
+    stdin_open: true
+    tty: false
+    volumes:
+      - cp-mcp-data:/data
+    environment:
+      CP_USER_AGENT: ${CP_USER_AGENT:-cp-mcp/0.1}
+      CP_RATE_LIMIT_RPS: ${CP_RATE_LIMIT_RPS:-1.0}
+      CP_RATE_LIMIT_BURST: ${CP_RATE_LIMIT_BURST:-3}
+      CP_CACHE_PATH: /data/cache.sqlite
+      CP_LOG_LEVEL: ${CP_LOG_LEVEL:-INFO}
+
+volumes:
+  cp-mcp-data:

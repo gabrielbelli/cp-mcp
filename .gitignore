@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environment
+venv/
+.venv/
+
+# Local data / cache
+data/
+*.sqlite
+*.sqlite-journal
+*.db
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Local secrets and overrides
+.env
+.env.local
+.claude/
+
+# Test fixtures: HTML files here are checked in (they're test inputs).
+# Put ad-hoc scrapes in /tmp, not here.
